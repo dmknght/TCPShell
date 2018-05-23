@@ -28,7 +28,7 @@ int ba4439ee(char input[])
 	{
 		int _input = input[i];
 		int _string = mystring[i];
-		result = (_input >> 5) | (_input << 1);
+		result = (_input << 1) | (_input >> 7);
 		if (result - _string)
 		{
 			return result;

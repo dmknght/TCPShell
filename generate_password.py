@@ -1,8 +1,10 @@
+
 clrPasswd = raw_input("Enter Password: ")
 encPasswd = ''
 
+
 for char in clrPasswd:
-	_tmp = (ord(char) >> 5) | (ord(char) << 1)
+	_tmp = (ord(char) << 1) | (ord(char) >> 7)
 	#print _tmp
 	encPasswd += chr(_tmp)
 
