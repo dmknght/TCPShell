@@ -9,10 +9,21 @@ int ba4439ee(char input[])
 	char *mystring = "\xa2\xc3\xe7\xe7\xef\xdf\xe7\xcb"; //Password
 	int i = 0;
 	char result;
-	if (strlen(mystring) != strlen(input))
+	int szMyString = 0;
+	while (mystring[szMyString])
 	{
-		return 1;
+		szMyString++;
 	}
+	int szInput = 0;
+	while (input[szInput])
+	{
+		szInput++;
+	}
+	if (szInput - szMyString)
+	{
+		return szInput - szMyString;
+	}
+
 	while (input[i])
 	{
 		int _input = input[i];
