@@ -1,12 +1,4 @@
-import sys
-
-#####	Generate password for linux_bind.c
-
-try:
-	clrPasswd = sys.argv[1]
-except:
-	sys.exit("Usage: python generate_password.py <your_password>")
-
+clrPasswd = raw_input("Enter Password: ")
 encPasswd = ''
 
 for char in clrPasswd:
